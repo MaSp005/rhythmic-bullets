@@ -4,7 +4,7 @@ const w = 800;
 const h = 450;
 canv.forEach(x => x.width = w);
 canv.forEach(x => x.height = h);
-const gamename = "Bullets.js";
+const gamename = "Rhythmic Bullets";
 const uidiv = document.querySelector(".ui");
 const creditdiv = document.querySelector(".credits");
 const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
