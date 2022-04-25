@@ -16,3 +16,4 @@ I am planning on expanding this project further by including more songs, level s
 
 ### I hope you enjoy the prototype!
 
+[Play the game here!](https://one-gamer.itch.io/rythmic-bullets)
