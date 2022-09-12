@@ -1,0 +1,26 @@
+{
+  "audio": "svrge_animosity.mp3",
+  "songname": "Animosity",
+  "artist": "SVRGE",
+  "bpm": 126,
+  "events": [
+    {
+      "beat": "1,1",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "t / 3 * w",
+        "movey": "c.y",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {
+          "y": "i / 4 * h"
+        }
+      },
+      "count": 4,
+      "offset": 1,
+      "repeat": [100, 4]
+    }
+  ]
+}

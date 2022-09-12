@@ -1,0 +1,616 @@
+{
+  "audio": "svrge_let-you-go.mp3",
+  "songname": "Let You Go",
+  "artist": "SVRGE",
+  "bpm": 127,
+  "offset": 1083,
+  "events": [
+    {
+      "beat": "0,1",
+      "type": "movementradius",
+      "slideto": 100,
+      "duration": 2,
+      "function": "quadout"
+    }, {
+      "beat": "1,1",
+      "type": "movementradius",
+      "setto": 120,
+      "slideto": 100,
+      "duration": 1,
+      "function": "quadin",
+      "repeat": [3,2]
+    }, {
+      "beat": "1,1",
+      "type": "spawn",
+      "elements": [
+        {
+          "shape": "circle",
+          "rad": 20,
+          "movex": "t / 4 * 800 - 25",
+          "movey": "30",
+          "fadeout": 5,
+          "kill": 5
+        }, {
+          "shape": "circle",
+          "rad": 20,
+          "movex": "w - t / 4 * 800 + 25",
+          "movey": "h - 30",
+          "fadeout": 5,
+          "kill": 5
+        }
+      ],
+      "repeat": [2, 4]
+    }, {
+      "beat": "1,3",
+      "type": "spawn",
+      "elements": [
+        {
+          "shape": "circle",
+          "rad": 20,
+          "movex": "30",
+          "movey": "t / 4 * 800 - 25",
+          "fadeout": 5,
+          "kill": 5
+        }, {
+          "shape": "circle",
+          "rad": 20,
+          "movex": "w - 30",
+          "movey": "h - t / 4 * 800 + 25",
+          "fadeout": 5,
+          "kill": 5
+        }
+      ]
+    }, {
+      "beat": "3,1",
+      "type": "spawn",
+      "elements": [
+        {
+          "shape": "triangle",
+          "rad": 10,
+          "movex": "t / 4 * 800 - 25",
+          "movey": "h / 2 + 10",
+          "fadeout": 5,
+          "kill": 5
+        }, {
+          "shape": "triangle",
+          "rad": 10,
+          "movex": "w - t / 4 * 800 + 25",
+          "movey": "h / 2 - 10",
+          "fadeout": 5,
+          "kill": 5
+        }
+      ]
+    }, {
+      "beat": "3,3",
+      "type": "spawn",
+      "elements": [
+        {
+          "shape": "triangle",
+          "rad": 10,
+          "movex": "w / 2 + 10",
+          "movey": "t / 4 * 800 - 25",
+          "fadeout": 5,
+          "kill": 5
+        }, {
+          "shape": "triangle",
+          "rad": 10,
+          "movex": "w / 2 - 10",
+          "movey": "h - t / 4 * 800 + 25",
+          "fadeout": 5,
+          "kill": 5
+        }
+      ]
+    }, {
+      "beat": "4,1",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "(w / 3) * (c.x + 1)",
+        "movey": "h - t / 4 * 800 + 25",
+        "fadeout": 5,
+        "kill": 5,
+        "custom": {"x": "i / 3"}
+      },
+      "count": 4,
+      "offset": 1
+    }, {
+      "beat": "5,1",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "w - t / 4 * 800 + 25",
+        "movey": "(h / 3) * (c.y + 1)",
+        "fadeout": 5,
+        "kill": 5,
+        "custom": {"y": "i / 3"}
+      },
+      "count": 4,
+      "offset": 1
+    }, {
+      "beat": "6,1",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "(w / 3) * (c.x + 1)",
+        "movey": "t / 4 * 800 - 25",
+        "fadeout": 5,
+        "kill": 5,
+        "custom": {
+          "x": "i / 7"
+        }
+      },
+      "count": 8,
+      "offset": 0.5
+    }, {
+      "beat": "7,1",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "w - t / 4 * 800 + 25",
+        "movey": "(h / 3) * (c.y + 1)",
+        "fadeout": 5,
+        "kill": 5,
+        "custom": {"y": "i / 7"}
+      },
+      "count": 8,
+      "offset": 0.5
+    }, {
+      "beat": "8,2",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "(c.x < 0 ? w : 0) + (t / 4 * 800 + 25) * c.x",
+        "movey": "(c.y < 0 ? h : 0) + (t / 4 * 600 + 25) * c.y",
+        "fadeout": 5,
+        "kill": 5,
+        "custom": {
+          "y": "[1,1,-1,-1][i]",
+          "x": "[1,-1,1,-1][i]"
+        }
+      },
+      "count": 4,
+      "offset": 1
+    }, {
+      "beat": "9,2",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 20,
+        "movex": "(c.x < 0 ? w : 0) + (t / 4 * 800 + 25) * c.x",
+        "movey": "(c.y < 0 ? h : 0) + (t / 4 * 600 + 25) * c.y",
+        "fadeout": 5,
+        "kill": 5,
+        "custom": {
+          "y": "[1,1][i]",
+          "x": "[1,-1][i]"
+        }
+      },
+      "count": 2,
+      "offset": 0.5
+    }, {
+      "beat": "9,4",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 20,
+        "movex": "(c.x < 0 ? w : 0) + (t / 4 * 800 + 25) * c.x",
+        "movey": "(c.y < 0 ? h : 0) + (t / 4 * 600 + 25) * c.y",
+        "fadeout": 5,
+        "kill": 5,
+        "custom": {
+          "y": "[-1,-1][i]",
+          "x": "[1,-1][i]"
+        }
+      },
+      "count": 2,
+      "offset": 0.5
+    }, {
+      "beat": "10,2",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "w / 2 + (t - 1.5) * w / 4",
+        "movey": "h / 2 + cos(t * PI) * (h / 6)",
+        "_movey": "h/2+(((t*2-2)**(3))-3*((t*2-2)**(2))+2)*(h/4)",
+        "fadeout": 2,
+        "kill": 3
+      }
+    }, {
+      "beat": "11,1",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 30,
+        "movex": "t / 2 * w",
+        "movey": "h / 2 + c.y * h / 3",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {
+          "y": "cos(i * PI / 4)"
+        }
+      },
+      "count": 8,
+      "offset": 0.25
+    }, {
+      "beat": "11,3",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 30,
+        "movex": "w / 2 + c.x",
+        "movey": "c.dir ? t * 500 - 35 : h - t * 500 + 35",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {
+          "x": "w / 3 * (i - 1)",
+          "dir": "i == 1"
+        }
+      },
+      "count": 2,
+      "offset": 0.5
+    }, {
+      "beat": "11,4.5",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 30,
+        "movex": "w / 1.5",
+        "movey": "h - t * 500 + 35",
+        "fadeout": 3,
+        "kill": 3
+      }
+    }, {
+      "beat": "12,2",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "c.dir ? w - t * 500 + 25 : t * 500 - 25",
+        "movey": "h / 4 + c.y * h / 6",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {
+          "y": "i",
+          "dir": "i % 2"
+        }
+      },
+      "count": 4,
+      "offset": 1
+    }, {
+      "beat": "13,3",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 15,
+        "movex": "w / 3",
+        "movey": "t * 500 - 25",
+        "fadeout": 3,
+        "kill": 3
+      }
+    }, {
+      "beat": "13,4",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 15,
+        "movex": "c.x",
+        "movey": "c.dir ? t * 500 - 25 : h - t * 500 + 25",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {
+          "x": "!i ? w / 2 : w / 1.5",
+          "dir": "i"
+        }
+      },
+      "count": 2,
+      "offset": 0.5
+    }, {
+      "beat": "14,3",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 5,
+        "movex": "w / 2 + sin(t + c.ang) * t * 36",
+        "movey": "h / 2 + cos(t + c.ang) * t * 36",
+        "fadeout": 4,
+        "kill": 5,
+        "custom": {
+          "ang": "i * PI / 4"
+        }
+      },
+      "count": 28,
+      "offset": 0.25
+    }, {
+      "beat": "16,1",
+      "type": "movementradius",
+      "setto": 120,
+      "slideto": 100,
+      "duration": 1,
+      "repeat": [28,1]
+    }, {
+      "beat": "16,2",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "w / 2 + (t - 1.5) * w / 4",
+        "movey": "h / 2 - cos(t * PI) * (h / 6)",
+        "_movey": "h/2+(((t*2-2)**(3))-3*((t*2-2)**(2))+2)*(h/4)",
+        "fadeout": 2,
+        "kill": 3
+      },
+      "repeat": [4, 8]
+    }, {
+      "beat": "17,2",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "w / 2 + t * sin(c.ang + t) * w / 4",
+        "movey": "h / 2 - t * cos(c.ang + t) * w / 4",
+        "fadeout": 2,
+        "kill": 3,
+        "custom": {"ang":"i * PI / 4"}
+      },
+      "count": 8,
+      "repeat": [2, 2]
+    }, {
+      "beat": "19,2",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "w / 2 + t * sin(c.ang + t) * w / 4",
+        "movey": "h / 2 - t * cos(c.ang + t) * w / 4",
+        "fadeout": 2,
+        "kill": 3,
+        "custom": {"ang":"i * PI / 4"}
+      },
+      "count": 8,
+      "repeat": [2, 2]
+    }, {
+      "beat": "21,2",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "w / 2 + t * sin(c.ang + t) * w / 4",
+        "movey": "h / 2 - t * cos(c.ang + t) * w / 4",
+        "fadeout": 2,
+        "kill": 3,
+        "custom": {"ang":"i * PI / 4"}
+      },
+      "count": 8,
+      "repeat": [2, 2]
+    }, {
+      "beat": "23,2",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "w / 2 + t * sin(c.ang + t) * w / 4",
+        "movey": "h / 2 - t * cos(c.ang + t) * w / 4",
+        "fadeout": 2,
+        "kill": 3,
+        "custom": {"ang":"i * PI / 4"}
+      },
+      "count": 8,
+      "repeat": [2, 2]
+    }, {
+      "beat": "24,1",
+      "type": "circleglow",
+      "setto": 1,
+      "slideto": 0.5,
+      "duration": 1,
+      "repeat": [28,1]
+    }, {
+      "beat": "24,1",
+      "type": "movementradius",
+      "slideto": 150,
+      "duration": 28,
+      "function": "sineinout"
+    }, {
+      "beat": "24,1",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "c.dir ? w / 4 : w - w / 4",
+        "movey": "c.dir ? h - t * h / 2 + 25 : t * h / 2 - 25",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {"dir":"i"}
+      },
+      "count": 2,
+      "repeat": [28, 1]
+    }, {
+      "beat": "28,1.5",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "c.dir ? w / 4 : w - w / 4",
+        "movey": "c.dir ? h - t * h / 2 + 25 : t * h / 2 - 25",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {"dir":"i"}
+      },
+      "count": 2,
+      "repeat": [12, 1]
+    }, {
+      "beat": "30,1.25",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "c.dir ? w / 4 : w - w / 4",
+        "movey": "c.dir ? h - t * h / 2 + 25 : t * h / 2 - 25",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {"dir":"i"}
+      },
+      "count": 2,
+      "repeat": [4, 1]
+    }, {
+      "beat": "30,1.75",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "c.dir ? w / 4 : w - w / 4",
+        "movey": "c.dir ? h - t * h / 2 + 25 : t * h / 2 - 25",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {"dir":"i"}
+      },
+      "count": 2,
+      "repeat": [4, 1]
+    }, {
+      "beat": "31,4",
+      "type": "movementradius",
+      "slideto": 100,
+      "duration": 1,
+      "function": "quadin"
+    }, {
+      "beat": "31,2",
+      "type": "help",
+      "topx": 0.3,
+      "topy": 0.4,
+      "width": 0.4,
+      "height": 0.2,
+      "duration": 4
+    }, {
+      "beat": "32,1",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 20,
+        "movex": "w / 2 + sin(c.a + t / 2) * t * w / 4",
+        "movey": "h / 2 + cos(c.a + t / 2) * t * h / 4",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {"a":"-i * PI / 10"}
+      },
+      "count": 28,
+      "offset": 1
+    }, {
+      "beat": "32,1",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 20,
+        "movex": "w / 2 - sin(c.a + t / 2) * t * w / 4",
+        "movey": "h / 2 - cos(c.a + t / 2) * t * h / 4",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {"a":"-i * PI / 10"}
+      },
+      "count": 28,
+      "offset": 1
+    }, {
+      "beat": "32,1",
+      "type": "circleglow",
+      "setto": 1,
+      "slideto": 0.5,
+      "duration": 1,
+      "repeat": [28,1]
+    }, {
+      "beat": "39,1",
+      "type": "movementradius",
+      "slideto": 150,
+      "duration": 4,
+      "function": "sineinout"
+    }, {
+      "beat": "39,1",
+      "type": "movementcenterx",
+      "slideto": 0.6,
+      "duration": 1,
+      "function": "quadinout"
+    }, {
+      "beat": "39,2",
+      "type": "movementcenterx",
+      "slideto": 0.4,
+      "duration": 1,
+      "function": "quadinout"
+    }, {
+      "beat": "39,3",
+      "type": "movementcenterx",
+      "slideto": 0.6,
+      "duration": 0.5,
+      "function": "quadinout"
+    }, {
+      "beat": "39,3.5",
+      "type": "movementcenterx",
+      "slideto": 0.4,
+      "duration": 0.5,
+      "function": "quadinout"
+    }, {
+      "beat": "39,4",
+      "type": "movementcenterx",
+      "slideto": 0.5,
+      "duration": 0.5,
+      "function": "quadinout"
+    }, {
+      "beat": "40,1",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 20,
+        "movex": "w / 2 + sin(c.a + t / 2) * t * w / 4",
+        "movey": "h / 2 + cos(c.a + t / 2) * t * h / 4",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {"a":"-i * PI / 10"}
+      },
+      "count": 28,
+      "offset": 1
+    }, {
+      "beat": "40,1",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 20,
+        "movex": "w / 2 - sin(c.a + t / 2) * t * w / 4",
+        "movey": "h / 2 - cos(c.a + t / 2) * t * h / 4",
+        "fadeout": 3,
+        "kill": 3,
+        "custom": {"a":"-i * PI / 10"}
+      },
+      "count": 28,
+      "offset": 1
+    }, {
+      "beat": "40,1.5",
+      "type": "spawn",
+      "element": {
+        "shape": "triangle",
+        "rad": 10,
+        "movex": "t * w / 4 - 25",
+        "movey": "h / 2 + (c.dir ? -1 : 1) * Math.sin(t / 2 * PI) * h / 3",
+        "fadeout": 5,
+        "kill": 5,
+        "custom": {"dir":"i % 2"}
+      },
+      "count": 28,
+      "offset": 1
+    }, {
+      "beat": "48,1",
+      "type": "spawn",
+      "element": {
+        "shape": "circle",
+        "rad": 10,
+        "movex": "w / 2 + t * sin(c.ang + t) * w / 4",
+        "movey": "h / 2 - t * cos(c.ang + t) * w / 4",
+        "fadeout": 2,
+        "kill": 3,
+        "custom": {"ang":"i * PI / 4"}
+      },
+      "count": 8
+    }
+  ]
+}

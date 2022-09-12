@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rhythmic Bullets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Krona One" rel="stylesheet" /> -->
+    <!-- <script src="jszip.min.js"></script> -->
+  </head>
+  <body>
+    <main>
+      <div class="edit">
+        <div class="control">
+        </div>
+        <div class="timeline">
+          <button class="play" onclick="
+            if (!cdata.aplaying) {
+              if (actx.state === 'suspended') actx.resume();
+              this.innerHTML = (cdata.aplaying = !!(aud.play())) ? '||' : '▶';
+            } else this.innerHTML = (cdata.aplaying = aud.pause()) ? '||' : '▶'">
+            ▶</button>
+          <div class="head" onmousemove="if(event.buttons & 1) {aud.currentTime = (event.layerX * zoom + toff) / 1000}">
+          </div>
+          <div class="cursor"></div>
+          <div class="body"></div>
+        </div>
+        <div class="inspect">
+          <div class="head">
+            <t onclick="editdiv.inspect.className='inspect general'">General</t>
+            <t onclick="editdiv.inspect.className='inspect add'">Add Event</t>
+            <t onclick="editdiv.inspect.className='inspect edit'">Edit Event</t>
+            <t onclick="editdiv.inspect.className='inspect export'">Manage</t>
+          </div>
+          <div class="body">
+            <div class="general">
+              Title: <input type="text" id="songname" oninput="editor.songname = this.value"><br>
+              Author: <input type="text" id="artist" oninput="editor.artist = this.value"><br>
+              Filename: <input type="text" id="audio" oninput="editor.audio = this.value">
+              <button onclick="aud.src = this.previousElementSibling.value; cdata.aplaying = false;
+                document.getElementsByClassName('play')[0].innerHTML = 'Play'">Apply</button><br>
+              BPM: <input type="number" id="bpm" min="0" oninput="editor.bpm = this.value; updatebeats()">
+              <button onclick="calcmspb(editor.bpm = this.previousElementSibling.value = bpmdetect())">Detect</button><br>
+              Offset (ms): <input type="number" id="offset" min="0" oninput="editor.offset = this.value">
+            </div>
+            <div class="add"></div>
+            <div class="edit">Select an Event to start editing.</div>
+            <div class="export">
+              <input type="text" id="import">
+              <button onclick="editimport(this.previousElementSibling.value)">Import</button><br>
+              <button onclick="alert('For now, copy this lol: '+JSON.stringify(editor))">Save</button><br>
+              <input type="file" id="importfile">
+              <div class="uploadloading"></div>
+              <button onclick="view='menu'; document.getElementsByTagName('main')[0].classList.remove('editor'); loading=false">Exit</button><br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui">
+        <input type="range" id="volume" min="0" max="2" step=".05" title="Volume Control" tabindex="0" oninput="updatesett()">
+        <label for="volume" style="vertical-align: 30%;">Volume</label><br>
+        <input type="checkbox" id="canvglow" tabindex="0" oninput="updatesett()">
+        <label for="canvglow">Hide Glow</label>
+      </div>
+      <div class="credits">
+        <h1>Credits</h1>
+        <h2>Made by</h2>
+        <h1>Masp005 / one gamer</h1>
+        <h2>in 10 days for the</h2>
+        <h1>Bullet Hell Game Jam</h1>
+        <h2>and</h2>
+        <h1>Gamedev.js Game Jam</h1>
+      </div>
+      <canvas class="glow" title=""></canvas>
+      <canvas title=""></canvas>
+    </main>
+    <script src="script.js" async defer></script>
+    <audio src="audio/svrge_let-you-go.mp3" crossorigin="anonymous" autoplay></audio>
+    <audio src="audio/explosion2.wav" crossorigin="anonymous" id="deathsound"></audio>
+  </body>
+</html>

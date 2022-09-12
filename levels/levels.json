@@ -1,0 +1,16 @@
+[
+  {
+    "artist": "SVRGE",
+    "songname": "Let You Go",
+    "audio": "svrge_let-you-go.mp3",
+    "data": "level0.json",
+    "bpm": 127
+  },
+  {
+    "artist": "SVRGE",
+    "songname": "Animosity",
+    "audio": "svrge_animosity.mp3",
+    "data": "level1.json",
+    "bpm": 122
+  }
+]

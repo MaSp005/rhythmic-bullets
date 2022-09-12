@@ -1,0 +1,197 @@
+@font-face {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/kronaone/v12/jAnEgHdjHcjgfIb1ZcUyOIWg7cU.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/kronaone/v12/jAnEgHdjHcjgfIb1ZcUyNoWg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+* {
+  overflow: visible;
+  font-family: Krona One;
+}
+canvas, .credits, main {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+}
+canvas:first-of-type {
+  z-index: -1;
+}
+canvas.glow {
+  filter: drop-shadow(-1px -1px 10px #fff7)
+    drop-shadow(-1px 1px 10px #fff7)
+    drop-shadow(1px -1px 10px #fff7)
+    drop-shadow(1px 1px 10px #fff7);
+}
+.ui {
+  width: calc(100vw - 20px);
+  height: fit-content;
+  z-index: 1;
+  filter: grayscale();
+  position: absolute;
+  bottom: 0;
+  left:0;
+  padding: 10px;
+  color: white;
+  font-family: Krona One;
+}
+canvas.blur2 {filter: blur(2px);}
+canvas.blur4 {filter: blur(4px);}
+canvas.blur6 {filter: blur(6px);}
+canvas.blur8 {filter: blur(8px);}
+body {
+  background: black;
+  cursor: none;
+}
+.credits {
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  text-align: center;
+  color: white;
+  font-family: Krona One;
+  display: none;
+}
+.credits > * {margin: 0;}
+.credits > h1:first-child {
+  margin: 30px 0;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+div.edit {display:none}
+main.editor {
+  color: #fff;
+  cursor: crosshair !important;
+  overflow-x: hidden;
+}
+main.editor div.edit {display:block}
+main.editor canvas {
+  width: 50%;
+  height: 50%;
+  cursor: none;
+  border: 1px solid #fff3;
+  margin: -1px 0 0 -1px;
+}
+main.editor .inspect {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 50vh;
+}
+main.editor .inspect .head {height: 20px; background: #111}
+main.editor .inspect .body {height: calc(100% - 20px); background: #222}
+/* main.editor .inspect .body input {float: right;} */
+main.editor .inspect .head t {
+  display: inline-block;
+}
+main.editor .inspect .head t:hover {
+  color: #f2f
+}
+main.editor .inspect .uploadloading {
+  height: 10px;
+  width: 0;
+  background: rgb(32, 248, 212);
+  display: block;
+}
+main .inspect .body div {display: none}
+main.editor .inspect.general div.general {display: block}
+main.editor .inspect.add div.add {display: block}
+main.editor .inspect.edit div.edit {display: block}
+main.editor .inspect.export div.export {display: block}
+
+main.editor .timeline {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  height: 50vh;
+  background: #1c1c1c;
+}
+main.editor .timeline .head {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  height: 20px;
+  background: #111;
+}
+main.editor .timeline .body {
+  height: calc(50vh - 20px);
+}
+main.editor .timeline .beat {
+  position: absolute;
+  width: fit-content;
+  height: 20px;
+  border-left: 1px solid #555;
+  padding-left: 2px;
+  user-select: none;
+  font-size: 8px;
+  color:#555;
+}
+
+main.editor .timeline .event {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: calc(50px * var(--layer));
+  transform: translateX(-10px);
+}
+main.editor .timeline .select {
+  filter: drop-shadow(0 0 5px #fff);
+}
+main.editor .timeline .event.spawn {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid lime;
+}
+main.editor .timeline .event.movementradius {
+  border-radius: 50%;
+  outline: 2px solid #888
+}
+main.editor .timeline .event.circleglow {
+  border-radius: 50%;
+  background: #888;
+}
+main.editor .timeline .event.movementcentery {
+  width: 0;
+  background: #888;
+}
+main.editor .timeline .event.movementcenterx {
+  height: 0;
+  background: #888;
+}
+
+main.editor .timeline .cursor {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #f2f;
+}
+main.editor button.play {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
